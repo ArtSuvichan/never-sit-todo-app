@@ -5,8 +5,10 @@ import { api } from '../../components/apis';
 import CardContent from '../../components/card/card-content';
 import { useStoreContext } from '../../components/helper/StoreProvider';
 import SEO from '../../components/seo';
+import { useRouter } from 'next/router';
 
 const MainPage: NextPage = () => {
+    const route = useRouter();
     const { loading, setLoading, select, setSelectList } = useStoreContext()
     const [list, setList] = useState([])
 
@@ -18,8 +20,10 @@ const MainPage: NextPage = () => {
 
     const handleLoad = async () => {
         const res = await api.getAllTodoList();
-        if (res.status === 200) {
+        if (res?.status === 200) {
             setList(res?.data)
+        } else {
+            route.push('/login-page')
         }
         setLoading(false)
     }

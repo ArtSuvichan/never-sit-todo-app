@@ -66,8 +66,8 @@ const Footer: React.FC<Iprops> = ({ setLoading, setSelect, select, selectList, s
                                             style={{ background: 'white', border: '1px solid gray' }}
                                             type="button"
                                             onClick={async () => {
-                                                await setLoading(true)
                                                 await route.push('/calendar-page')
+                                                await setLoading(true)
                                             }}
                                         >
                                             <i className="bi bi-calendar4" style={{ fontSize: 40, color: 'red' }}></i>
@@ -106,8 +106,8 @@ const Footer: React.FC<Iprops> = ({ setLoading, setSelect, select, selectList, s
                                 }}
                                 type="button"
                                 onClick={() => {
-                                    setLoading(true);
                                     route.push('/main-page');
+                                    setLoading(true);
                                 }}
                             >
                                 <i className="bi bi-check" style={{ fontSize: 40 }}></i>
@@ -118,8 +118,8 @@ const Footer: React.FC<Iprops> = ({ setLoading, setSelect, select, selectList, s
                                 className="rounded-circle bg-white"
                                 type="button"
                                 onClick={() => {
-                                    setLoading(true);
                                     route.push('/main-page');
+                                    setLoading(true);
                                 }}
                             >
                                 <i className="bi bi-list" style={{ fontSize: 40, color: "red" }}></i>
