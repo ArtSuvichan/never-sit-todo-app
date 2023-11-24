@@ -23,14 +23,14 @@ const Footer: React.FC<Iprops> = ({ setLoading, setSelect, select, selectList, s
 
     return (
         page === '/done-task' ? <></> :
-            <div className="w-100 text-center position-absolute bottom-0 pt-3 pb-3 bg-white"
+            <div className="w-100 text-center position-absolute bottom-0"
                 style={{
-                    background: "rgb(255,255,255)",
-                    backgroundImage: "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(242,253,255,1) 5%, rgba(242,253,255,1) 61%, rgba(0,212,255,0) 100%)"
+                    backgroundImage: "linear-gradient(0deg, rgba(255,255,255,1) 53%, rgba(255,255,255,0) 100%)",
+                    paddingTop: "40px"
                 }}>
                 {page === '/main-page' &&
                     <>
-                        <div className="row">
+                        <div className="row pt-3 pb-3">
                             <div className="col">
                                 <Button
                                     className="rounded-circle"
@@ -65,9 +65,9 @@ const Footer: React.FC<Iprops> = ({ setLoading, setSelect, select, selectList, s
                                             className="rounded-circle"
                                             style={{ background: 'white', border: '1px solid gray' }}
                                             type="button"
-                                            onClick={() => {
-                                                setLoading(true)
-                                                route.push('/calendar-page')
+                                            onClick={async () => {
+                                                await setLoading(true)
+                                                await route.push('/calendar-page')
                                             }}
                                         >
                                             <i className="bi bi-calendar4" style={{ fontSize: 40, color: 'red' }}></i>
@@ -95,7 +95,7 @@ const Footer: React.FC<Iprops> = ({ setLoading, setSelect, select, selectList, s
                 }
 
                 {page === '/calendar-page' && <>
-                    <div className="row">
+                    <div className="row  pt-3 pb-3">
                         <div className="col">
                             <Button
                                 className="rounded-circle"

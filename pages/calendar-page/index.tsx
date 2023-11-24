@@ -52,25 +52,26 @@ const CalendarPage: React.FC<IProps> = () => {
                             />
                         </div>
                     </div>
-                    <div className='row'>
-                        <div className="col">
-                            <div className='position-relative h-75 overflow-y-scroll hind-scorll-bar' style={{
-                                width: '100%',
-                            }}>
-                                {loading ?
-                                    <div className='text-center'>
-                                        <div className="spinner-border text-primary" role="status">
-                                            <span className="visually-hidden">Loading...</span>
-                                        </div>
-                                    </div> :
-                                    list.map((value, index) =>
-                                        <div className='row w-100 mb-3' style={{ marginLeft: '1px' }} key={index}>
-                                            <CardContent value={value} setLoading={setLoading} select={select} setSelectList={setSelectList} />
-                                        </div>
-                                    )
-                                }
-                            </div>
-                        </div>
+                    <div className='position-relative h-50 overflow-y-scroll hind-scorll-bar' style={{
+                        width: '100%',
+                        paddingBottom: '50px !important'
+                    }}>
+                        {loading ?
+                            <div className='text-center'>
+                                <div className="spinner-border text-primary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </div>
+                            </div> : <>
+                                {list.map((value, index) =>
+                                    <div className='row w-100 mb-3' style={{ marginLeft: '1px' }} key={index}>
+                                        <CardContent value={value} setLoading={setLoading} select={select} setSelectList={setSelectList} />
+                                    </div>
+                                )}
+                                <div className='row w-100 mb-3 h-10 m-5' style={{ marginLeft: '1px' }}>
+                                </div>
+                            </>
+
+                        }
                     </div>
                 </div>
             </main>

@@ -33,25 +33,25 @@ const Navbar: React.FC<IProps> = ({ showNav, setShowNav }) => {
                 <i className="bi bi-x" style={{ fontSize: 40 }}></i>
             </button>
             <ul className={styles.navList}>
-                <li onClick={() => {
-                    setShowNav(false)
-                    setLoading(true)
-                    route.push('/done-task')
+                <li onClick={async () => {
+                    await setShowNav(false)
+                    await setLoading(true)
+                    await route.push('/done-task')
                 }}>
                     Done Task
                 </li>
-                <li onClick={() => {
-                    setShowNav(false)
-                    setLoading(true)
-                    route.push('/extar-page')
+                <li onClick={async () => {
+                    await setShowNav(false)
+                    await setLoading(true)
+                    await route.push('/extar-page')
                 }}>
                     Extra Point
                 </li>
-                <li onClick={() => {
-                    localStorage.removeItem('session')
-                    setToken(undefined)
-                    setShowNav(false)
-                    route.push('/login-page')
+                <li onClick={async () => {
+                    await localStorage.removeItem('session')
+                    await setToken(undefined)
+                    await setShowNav(false)
+                    await route.push('/login-page')
                 }}>
                     logout
                 </li>

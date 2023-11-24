@@ -28,9 +28,9 @@ const MainPage: NextPage = () => {
         <div>
             <SEO title="Todo List Home Page" description="Wellcome to home page" />
             <main>
-                <div className='container vh-100 d-flex justify-content-center align-items-center position-relative'>
-                    <div className='position-fixed top-0 mt-5'><h1>TODO</h1></div>
-                    <div className='position-relative h-75 overflow-y-scroll hind-scorll-bar' style={{
+                <div className='container vh-100 d-flex justify-content-center align-items-center position-relative flex-column'>
+                    <div className='top-0 mt-5'><h1>TODO</h1></div>
+                    <div className='position-relative h-75 overflow-y-scroll hind-scorll-bar pb-5' style={{
                         width: '100%',
                     }}>
                         {loading ?

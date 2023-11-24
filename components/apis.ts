@@ -1,6 +1,8 @@
 import axios from 'axios'
+import env from '../env'
 
-const BASE_URL = process.env.apiEndpoint
+// const BASE_URL = process.env.API_ENPOINT
+const BASE_URL = env.API_ENPOINT
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
@@ -8,11 +10,9 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    // Check if the user is authenticated and has a token
     const token = localStorage.getItem('session')
 
     if (token) {
-      // Add the token to the headers
       config.headers.Authorization = `Bearer ${token}`
     }
 
@@ -28,11 +28,10 @@ const handleCall = async (api: any, msg: string | undefined) => {
     return await api
   } catch (error) {
     if (error.status == 401) {
-      //window.location.href = `/360/service/disaster/unauthorized`;
+      console.log('unauthorized')
     } else {
-      //window.location.href = `/360/service/disaster/internal_server_error`;
+      console.log('server error')
     }
-    // enqueueSnackbar(`${msg||''} ล้มเหลว ${error.status} ${error.message}`,{ variant: `error` });
     return api.error
   }
 }

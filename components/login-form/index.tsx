@@ -10,6 +10,7 @@ import { useMyContext } from '../helper/AuthProvider';
 interface Values {
     username: string;
     password: string;
+    loginFail?: string;
 }
 
 export default function LoginForm() {
@@ -91,12 +92,10 @@ export default function LoginForm() {
                             </div>
                             <div className="col-12">
                                 <ErrorMessage className='formik-error-message' name="password" component="div">{msg => <div className={styles.formik_error_message}>{msg}</div>}</ErrorMessage>
+                                {formik.errors?.loginFail && <div className={styles.formik_error_message}>{formik.errors?.loginFail}</div>}
                             </div>
                         </div>
                         <div className="row mb-3">
-                            <div className="col-12">
-                                <ErrorMessage className='formik-error-message' name="loginFail" component="div" >{msg => <div className={styles.formik_error_message}>{msg}</div>}</ErrorMessage>
-                            </div>
                             <div className="mb-3 text-center col-12">
                                 <button type="submit" className="btn btn-primary text-center" disabled={formik.isSubmitting}>Login</button>
                             </div>

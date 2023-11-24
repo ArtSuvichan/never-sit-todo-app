@@ -34,7 +34,7 @@ const DoneTask: NextPage = () => {
             <main className="vh-100 d-flex justify-content-center align-items-center flex-column">
                 <div className=''><h1>Done Task</h1></div>
                 <div className='container d-flex flex-column'>
-                    <div className='position-relative overflow-y-scroll hind-scorll-bar' style={{
+                    <div className='position-relative overflow-y-scroll hind-scorll-bar pb-5' style={{
                         width: '100%',
                         height: "80vh"
                     }}>
