@@ -1,0 +1,59 @@
+.navbar {
+  background-color: #333;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  transition: opacity 0.5s, height 0.5s;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.navbar.active {
+  opacity: 1;
+  height: auto;
+  width: 50vw;
+}
+
+.toggleButton {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px;
+}
+
+.navList {
+  list-style: none;
+  margin-top: 40px;
+  padding: 10px 0;
+}
+
+.navList li {
+  padding: 10px 0;
+  margin: 20px 0px;
+  background-color: white;
+  color: black;
+}
+
+@keyframes fadeInRightToLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.navbar {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeInRightToLeft 0.1s forwards;
+}

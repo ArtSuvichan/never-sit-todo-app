@@ -1,0 +1,11 @@
+.login_box {
+  width: 340px;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.formik_error_message {
+  color: red !important; /* Customize the color as needed */
+  font-size: 14px; /* Customize the font size as needed */
+  margin-top: 4px; /* Add spacing to separate the error message from the field */
+}
