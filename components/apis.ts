@@ -2,7 +2,7 @@ import axios from 'axios'
 import env from '../env'
 
 // const BASE_URL = process.env.API_ENPOINT
-const BASE_URL = env.API_ENPOINT
+const BASE_URL = env.API_ENDPOINT
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
