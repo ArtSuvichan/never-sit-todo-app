@@ -7,9 +7,10 @@ export const StoreProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState<boolean>(true);
     const [select, setSelect] = useState<boolean>(false);
     const [selectList, setSelectList] = useState<any[]>([]);
+    const [doneList, setDoneList] = useState<any[]>([]);
 
     return (
-        <Provider value={{ loading, setLoading, select, setSelect, selectList, setSelectList }}>
+        <Provider value={{ loading, setLoading, select, setSelect, selectList, setSelectList, doneList, setDoneList }}>
             {children}
         </Provider>
     )

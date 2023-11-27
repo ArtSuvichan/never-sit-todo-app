@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 
 const MainPage: NextPage = () => {
     const route = useRouter();
-    const { loading, setLoading, select, setSelectList } = useStoreContext()
+    const { loading, setLoading, select, setSelectList, doneList } = useStoreContext()
     const [list, setList] = useState([])
 
     useEffect(() => {

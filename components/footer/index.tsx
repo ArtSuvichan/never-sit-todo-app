@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ModalContent from "../modal/modal-content";
 import { Button } from 'reactstrap'
 import { useRouter } from "next/router";
+import { useStoreContext } from "../helper/StoreProvider";
 
 interface Iprops {
     setLoading?: (loading: boolean) => void;
@@ -12,6 +13,7 @@ interface Iprops {
 }
 const Footer: React.FC<Iprops> = ({ setLoading, setSelect, select, selectList, setSelectList }) => {
     const route = useRouter();
+    const { setDoneList } = useStoreContext()
     const [modalOpen, setModalOpen] = useState(false)
     const [page, setPage] = useState<string>('')
 
@@ -53,8 +55,10 @@ const Footer: React.FC<Iprops> = ({ setLoading, setSelect, select, selectList, s
                                     className="rounded-circle"
                                     color="primary"
                                     type="button"
-                                    onClick={() => alert(JSON.stringify(selectList))}
-                                // onClick={() => console.log('list', selectList)}
+                                    onClick={() => {
+                                        setSelect(false)
+                                        setDoneList(selectList)
+                                    }}
                                 >
                                     <i className="bi bi-check-all" style={{ fontSize: 40 }}></i>
                                 </Button>

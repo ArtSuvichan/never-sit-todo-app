@@ -9,25 +9,25 @@ import SEO from '../../components/seo'
 
 const DoneTask: NextPage = () => {
     const route = useRouter()
-    const { loading, setLoading } = useStoreContext()
-    const [list, setList] = useState([])
+    const { loading, setLoading, doneList } = useStoreContext()
+    // const [list, setList] = useState([])
 
-    useEffect(() => {
-        setLoading(true)
-    }, [])
-    useEffect(() => {
-        if (loading) {
-            handleLoad();
-        }
-    }, [loading])
+    // useEffect(() => {
+    //     setLoading(true)
+    // }, [])
+    // useEffect(() => {
+    //     if (loading) {
+    //         handleLoad();
+    //     }
+    // }, [loading])
 
-    const handleLoad = async () => {
-        const res = await api.getAllTodoList();
-        if (res.status === 200) {
-            setList(res?.data)
-        }
-        setLoading(false)
-    }
+    // const handleLoad = async () => {
+    //     const res = await api.getAllTodoList();
+    //     if (res.status === 200) {
+    //         setList(res?.data)
+    //     }
+    //     setLoading(false)
+    // }
     return (
         <div>
             <SEO title="Done Task page" description="See your todo successfully list" />
@@ -44,7 +44,7 @@ const DoneTask: NextPage = () => {
                                     <span className="visually-hidden">Loading...</span>
                                 </div>
                             </div> :
-                            list.map((value, index) =>
+                            doneList.map((value, index) =>
                                 <div className='row w-100 mb-3' style={{ marginLeft: '1px' }} key={index}>
                                     <CardContent value={value} setLoading={setLoading} />
                                 </div>
